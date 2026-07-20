@@ -1131,15 +1131,59 @@ a {
     color: var(--primary-color);
 }
 
+/* ===== فرم تماس با تصویر ===== */
 .contact-form {
-    background: var(--bg-card);
-    
-    width: 100px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
-.contact-form img {
-    width: 550px;
-    height: 550px;
+
+.contact-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
+
+.contact-img:hover {
+    transform: scale(1.02);
+}
+
+/* ===== ریسپانسیو ===== */
+
+/* تبلت و موبایل بزرگ */
+@media (max-width: 992px) {
+    .contact-form {
+        max-width: 100%;
+        border-radius: 16px;
+    }
+}
+
+/* موبایل */
+@media (max-width: 576px) {
+    .contact-form {
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .contact-img {
+        border-radius: 12px;
+        min-height: 180px;
+        max-height: 350px;
+        object-fit: cover;
+    }
+}
+
+/* موبایل بسیار کوچک */
+@media (max-width: 400px) {
+    .contact-img {
+        min-height: 140px;
+        max-height: 280px;
+    }
+}
+
 
 .form-group {
     position: relative;
